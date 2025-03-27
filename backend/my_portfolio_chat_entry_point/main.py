@@ -107,5 +107,18 @@ def run_assistant(assistant_id, user_input):
         print(f"Error running assistant: {e}")
         return "An error occurred while processing your request."
     
+# ✅ For Google Cloud Functions
+def my_portfolio_chat_entry_point(request):
+    with app.test_client() as client:
+        response = client.open(
+            path=request.full_path if request.query_string else request.path,
+            method=request.method,
+            headers=dict(request.headers),  # ✅ convert to mutable dict
+            data=request.get_data()
+        )
+        return (response.data, response.status_code, response.headers.items())
+
+
+# ✅ For local development
 if __name__ == "__main__":
     app.run(debug=True, port=8080)

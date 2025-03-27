@@ -1,0 +1,34 @@
+# backend / my_portfolio_chat_entry_point
+backend/my_portfolio_chat_entry_point/Commands_gcloud.txt
+__pycache__/
+*.pyc
+backend/my_portfolio_chat_entry_point/.venv/
+backend/my_portfolio_chat_entry_point/.env
+
+
+# frontend
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
