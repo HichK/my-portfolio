@@ -37,7 +37,7 @@ const NavBar = () => {
     return <header className={cn('fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out', isScrolled ? 'py-3 glass-darker shadow-sm' : 'py-5 bg-transparent')}>
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
             {/* Logo/Brand */}
-            <a href="#home" className="text-xl font-medium tracking-tight transition-colors hover:text-primary/80" onClick={handleLinkClick}>Hicham Khawand Portfolio</a>
+            <a href="#home" className="text-xl font-medium tracking-tight transition-colors hover:text-primary/80" onClick={handleLinkClick}>Hicham Khawand's Portfolio</a>
 
             {/* Desktop Navigation */}
             <nav className="hidden sm:flex items-center space-x-1">

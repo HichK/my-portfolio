@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Message } from '@/context/ChatContext';
 import { User, Bot } from 'lucide-react';
+import MeMessageBubble from '@/assets/images/hicham_avatar_icon.png';
 
 interface MessageBubbleProps {
     message: Message;
@@ -38,7 +39,11 @@ const MessageBubble = ({ message }: MessageBubbleProps) => {
         >
             {!isUser && (
                 <div className="flex-shrink-0 w-8 h-8 rounded-full overflow-hidden mr-3 flex items-center justify-center bg-secondary">
-                    <Bot className="w-5 h-5 text-secondary-foreground" />
+                    <img
+                        src={MeMessageBubble}
+                        alt="Bot Avatar"
+                        className="rounded-full w-full h-full object-cover"
+                    />
                 </div>
             )}
 

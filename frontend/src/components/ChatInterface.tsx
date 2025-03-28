@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Send, Loader2, RefreshCw } from 'lucide-react';
 import { cn } from '../lib/utils';
+import MeMessageIcon from '@/assets/images/hicham_avatar_small.png';
 
 const ChatInterface = () => {
     const { messages, isLoading, sendMessage, clearMessages } = useChat();
@@ -27,8 +28,22 @@ const ChatInterface = () => {
             }
 
             await sendMessage(message);
+
+            // Scroll to the bottom after sending the message
+            scrollToBottom();
         }
     };
+
+    const scrollToBottom = () => {
+        if (messagesEndRef.current) {
+            messagesEndRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        }
+    };
+
+    // Scroll to bottom when messages change
+    useEffect(() => {
+        scrollToBottom();
+    }, [messages, showTypingIndicator]);
 
     // Typing indicator effect
     useEffect(() => {
@@ -44,7 +59,7 @@ const ChatInterface = () => {
     // Scroll to bottom when messages change
     useEffect(() => {
         if (messagesEndRef.current) {
-            messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+            messagesEndRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
         }
     }, [messages, showTypingIndicator]);
 
@@ -68,10 +83,10 @@ const ChatInterface = () => {
     }, []);
 
     return (
-        <div className="flex flex-col w-full max-w-4xl mx-auto h-[calc(100vh-12rem)] sm:h-[calc(100vh-14rem)] md:h-[calc(100vh-16rem)] glass rounded-xl overflow-hidden border border-border/40">
+        <div className="flex flex-col w-full max-w-4xl mx-auto h-[calc(100dvh-14rem)] sm:h-[calc(100dvh-16rem)] md:h-[calc(100dvh-18rem)] glass rounded-xl overflow-hidden border border-border/50 opacity-85">
             {/* Chat header */}
             <div className="p-4 border-b border-border/40 flex justify-between items-center glass-darker">
-                <h3 className="text-lg font-medium">Chat Assistant</h3>
+                <h3 className="text-lg font-medium">Chat with my virtual self</h3>
                 <Button
                     variant="ghost"
                     size="sm"
@@ -87,10 +102,14 @@ const ChatInterface = () => {
             <div className="flex-1 overflow-y-auto p-4 sm:p-6">
                 {messages.length === 0 ? (
                     <div className="flex flex-col items-center justify-center h-full text-center p-6">
-                        <div className="w-16 h-16 mb-4 rounded-full bg-muted flex items-center justify-center animate-float">
-                            <Bot className="h-8 w-8 text-muted-foreground" />
+                        <div className="w-32 h-32 mb-4 rounded-full bg-muted flex items-center justify-center animate-float">
+                            <img
+                                src={MeMessageIcon}
+                                alt="Bot Avatar"
+                                className="rounded-full w-full h-full object-cover"
+                            />
                         </div>
-                        <h3 className="text-xl font-medium mb-2">Welcome to My Portfolio</h3>
+                        <h3 className="text-xl font-medium mb-2">Welcome to Hicham's Portfolio</h3>
                         <p className="text-muted-foreground max-w-md">
                             Ask me anything about my work, experience, or skills. I'm here to help!
                         </p>
@@ -104,8 +123,12 @@ const ChatInterface = () => {
                         {/* Typing indicator */}
                         {showTypingIndicator && (
                             <div className="flex items-start mb-4">
-                                <div className="flex-shrink-0 w-8 h-8 rounded-full overflow-hidden mr-3 flex items-center justify-center bg-secondary">
-                                    <Bot className="w-5 h-5 text-secondary-foreground" />
+                                <div className="flex-shrink-0 w-16 h-16 rounded-full overflow-hidden mr-3 flex items-center justify-center bg-secondary">
+                                    <img
+                                        src={MeMessageIcon}
+                                        alt="Bot Avatar"
+                                        className="rounded-full w-full h-full object-cover"
+                                    />
                                 </div>
                                 <div className="glass rounded-xl rounded-tl-none py-3 px-4">
                                     <div className="flex space-x-1">
@@ -116,10 +139,9 @@ const ChatInterface = () => {
                                 </div>
                             </div>
                         )}
-
-                        <div ref={messagesEndRef} />
                     </div>
                 )}
+                <div ref={messagesEndRef} />
             </div>
 
             {/* Input form */}
@@ -152,14 +174,12 @@ const ChatInterface = () => {
                     </Button>
                 </div>
                 <div className="text-xs text-muted-foreground mt-2 text-center sm:text-right">
-                    Press Cmd+Enter (or Ctrl+Enter) to send
+                    Press Enter to send
                 </div>
             </form>
         </div>
     );
 };
 
-// Import the Bot icon since we're using it in the empty state
-import { Bot } from 'lucide-react';
 
 export default ChatInterface;

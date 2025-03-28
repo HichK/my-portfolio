@@ -16,7 +16,7 @@ const ContactSection = () => {
 
             <div className="flex flex-wrap justify-center gap-6 mb-12">
                 <a
-                    href="mailto:your.email@example.com"
+                    href="mailto:your.hicham.khawand@gmail.com"
                     className="animate-slide-up [animation-delay:200ms]"
                 >
                     <Button className="flex items-center space-x-2 h-14 px-6">
@@ -26,7 +26,7 @@ const ContactSection = () => {
                 </a>
 
                 <a
-                    href="https://github.com/yourusername"
+                    href="https://github.com/HichK"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="animate-slide-up [animation-delay:400ms]"
@@ -38,7 +38,7 @@ const ContactSection = () => {
                 </a>
 
                 <a
-                    href="https://linkedin.com/in/yourusername"
+                    href="https://www.linkedin.com/in/hicham-khawand/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="animate-slide-up [animation-delay:600ms]"
@@ -53,11 +53,11 @@ const ContactSection = () => {
             <div className="glass rounded-xl p-8 text-center max-w-3xl mx-auto animate-slide-up [animation-delay:800ms]">
                 <h3 className="text-xl font-medium mb-4">Let's Work Together</h3>
                 <p className="mb-6 text-muted-foreground">
-                    Whether you're looking for a developer for your next project, want to collaborate on something exciting,
+                    Whether you're looking for an experienced engineer or a developer for your next project, want to collaborate on something exciting,
                     or just want to say hi, I'd love to hear from you.
                 </p>
                 <div className="text-sm text-muted-foreground">
-                    Made with precision and care. © {new Date().getFullYear()}
+                    Made with precision and care, with Lovable as a base and custom enhancements. © {new Date().getFullYear()}
                 </div>
             </div>
         </section>

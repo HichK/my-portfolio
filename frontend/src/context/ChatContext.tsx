@@ -81,14 +81,14 @@ export const ChatProvider = ({ children }: ChatProviderProps) => {
                 content
             });
 
-            // Send the entire conversation history to the API
-            const response = await fetch('https://europe-north1-quantum-enigma-454921-f7.cloudfunctions.net/my_portfolio_chat_entry_point/assistant', {
+            // Send the input message to the API
+            const response = await fetch('https://europe-north1-quantum-enigma-454921-f7.cloudfunctions.net/my_portfolio_chat_entry_point/test', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    messages: conversationHistory
+                    input: content // Send only the input message as per the API requirement
                 }),
                 mode: 'cors', // Ensure CORS mode is explicitly set
             });
@@ -99,10 +99,13 @@ export const ChatProvider = ({ children }: ChatProviderProps) => {
 
             const data = await response.json();
 
+            // Extract the assistant's response from the API response
+            const assistantResponse = data.response || data.message || data.content || "Sorry, I couldn't generate a response.";
+
             // Add assistant response to the messages
             const assistantMessage: Message = {
                 id: (Date.now() + 1).toString(),
-                content: data.message || data.content || "Sorry, I couldn't generate a response.",
+                content: assistantResponse,
                 role: 'assistant',
                 timestamp: new Date()
             };
