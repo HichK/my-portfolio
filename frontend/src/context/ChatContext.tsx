@@ -57,6 +57,11 @@ export const ChatProvider = ({ children }: ChatProviderProps) => {
     const sendMessage = async (content: string) => {
         if (!content.trim()) return;
 
+        // Get today's time in a readable format
+        const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        // Get today's date in a readable format
+        const currentDate = new Date().toLocaleDateString([], { year: 'numeric', month: 'long', day: 'numeric' });
+
         // Add user message to the state
         const userMessage: Message = {
             id: Date.now().toString(),
@@ -70,27 +75,27 @@ export const ChatProvider = ({ children }: ChatProviderProps) => {
 
         try {
             // Prepare the conversation history for the API
-            const conversationHistory = messages.map(msg => ({
-                role: msg.role,
-                content: msg.content
-            }));
-
-            // Add the new user message to the history
-            conversationHistory.push({
-                role: 'user',
-                content
-            });
+            const conversationHistory = messages
+                .slice(-5) // Limit to the n last messages
+                .map(msg => ({
+                    role: msg.role,
+                    content: msg.content
+                }));
 
             // Send the input message to the API
-            const response = await fetch('https://europe-north1-quantum-enigma-454921-f7.cloudfunctions.net/my_portfolio_chat_entry_point/test', {
+            const response = await fetch('https://europe-north1-quantum-enigma-454921-f7.cloudfunctions.net/my_portfolio_chat_entry_point/assistant', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'X-API-Key': 'hich_chat_4c9c8316-6e23-4e57-b24e-a1792c74643b',
                 },
                 body: JSON.stringify({
-                    input: content // Send only the input message as per the API requirement
+                    input: content,
+                    history: conversationHistory, // Include the last two messages in the history
+                    date: currentDate,
+                    time: currentTime,
                 }),
-                mode: 'cors', // Ensure CORS mode is explicitly set
+                mode: 'cors',
             });
 
             if (!response.ok) {
@@ -109,6 +114,18 @@ export const ChatProvider = ({ children }: ChatProviderProps) => {
                 role: 'assistant',
                 timestamp: new Date()
             };
+
+            // Add the new user message to the history
+            conversationHistory.push({
+                role: 'user',
+                content
+            });
+
+            // Add the new user message to the history
+            conversationHistory.push({
+                role: 'assistant',
+                content: assistantMessage.content
+            });
 
             setMessages(prev => [...prev, assistantMessage]);
         } catch (error) {

@@ -48,7 +48,7 @@ const Index = () => {
             {/* Hero/Chat Section */}
 
             <section id="home" className="h-auto pt-12 pb-0 flex flex-col items-center justify-center">
-                <div className="container max-w-7xl mx-auto px-4 sm:px-6 text-center mb-12">
+                <div className="container max-w-7xl mx-auto px-4 sm:px-6 text-center mb-12 mt-9">
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-4 animate-slide-down">
                         Welcome to Hicham's Portfolio
                     </h1>
