@@ -23,6 +23,12 @@ const ChatInterface = () => {
             const message = inputValue;
             setInputValue('');
 
+            // Scroll to the bottom after sending the message
+            setTimeout(() => {
+                if (inputRef.current) {
+                    scrollToBottom();
+                }
+            }, 50);
 
             await sendMessage(message);
 
@@ -30,14 +36,8 @@ const ChatInterface = () => {
             setTimeout(() => {
                 if (inputRef.current) {
                     inputRef.current.focus();
-
-                    // Scroll to the bottom after sending the message
-                    scrollToBottom();
                 }
             }, 50);
-
-
-
         }
     };
 
@@ -49,7 +49,7 @@ const ChatInterface = () => {
 
     useEffect(() => {
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }, [messages]);
+    }, [messages, showTypingIndicator]);
 
     // Scroll to bottom when messages change
     useEffect(() => {
