@@ -11,7 +11,7 @@ app = Flask(__name__)
 app.config['RATELIMIT_HEADERS_ENABLED'] = True
 
 # --- CORS ---
-CORS(app, origins=["http://localhost:8080", "https://hichamkhawand.com"], 
+CORS(app, origins=["https://euphonious-mousse-2d2515.netlify.app/", "https://www.hichamkhawand.com"], 
      supports_credentials=True, 
      allow_headers=["Content-Type", "X-API-Key"],  # Allow custom headers
      methods=["GET", "POST", "OPTIONS"])  # Allow required HTTP methods

@@ -7,7 +7,7 @@
   REACT_APP_API_URL="https://europe-north1-quantum-enigma-454921-f7.cloudfunctions.net/my_portfolio_chat_entry_point/assistant"
 
 [[redirects]]
-  from = "https://www.hichamkhawand.com/*"
-  to = "https://hichamkhawand.com/:splat"
+  from = "https://hichamkhawand.com/*"
+  to = "https://www.hichamkhawand.com/:splat"
   status = 301
   force = true
