@@ -1,0 +1,19 @@
+## File: Hicham_Khawand_detailed_experience
+
+
+Hicham Khawand (About me, in details)
+17169 Solna, Stockholm | (+46) 73-337 48 54 | hicham.khawand@gmail.com | linkedin.com/in/hicham-khawand
+
+Software Engineering Beginnings (1995-2006): My journey into software engineering started during my college summer break in 2002, working with relatives who were Microsoft employees (one of them was among the first programmers of PowerPoint). By then, I already had a solid foundation in programming, having learned Turbo Pascal earlier, the project was in Visual basic .net, VB.Net 2002 was one of my earliest programming languages.
+Programming and coding courses, ranging from Turbo Pascal to microchip assembly, were my favorites. While many classmates found these subjects challenging, they came naturally to me. As a child, I had a PC and was proficient in DOS. I even enjoyed modifying game files and external scripts to cheat, as they were rarely encrypted back then.
+At school, I was most drawn to classes that allowed hands-on experience with computers. My first encounter with a PC was in 1991 at a neighbor’s house, where I played Pac-Man.
+
+Food Industry Introduction (1999): My initial exposure to the food industry was through a cousin who owned a coffee bean roasting and packaging factory. Among the advanced equipment in the factory was a Bosch machine capable of vacuum packaging coffee. The factory also featured a sophisticated SCADA system at the time (circa 1999), allowing real-time monitoring of processes and tanks.
+
+College and Mechatronics (2001-2006): ULFG2 was not the most prestigious college in Lebanon, but it was known for its rigor, requiring grit, intelligence, and resilience to succeed. I wasn’t particularly fond of the “integral triple” (in French) and the highly theoretical mathematics required for electrical engineering, which was a prerequisite for software engineering (“courant faible” in French) at my college. Instead, I opted for a more hands-on field: mechanical and mechatronics engineering.
+During this time, I took charge of the college’s “computer club” around 2005, where I managed the club’s assets and maintained the PCs’ software. This role also allowed me to enhance my skills in 3ds Max and Visual Turbo Pascal. One of my internships was at “Air Liquide,” where I developed a completely updated PID (Piping and Instrumentation Diagram) from scratch.
+I performed well in mechanical engineering and achieved good grades. In my final semester, we were tasked with a capstone project. A friend guided our team to combine the project with an internship at Technica International in 2006. The project involved designing a trio of systems: a tray inserter, a glass palletizer with a pantograph, and an automatic tray magazine. My primary responsibility was the tray magazine. Additionally, I created a video for the jury using 3ds Max, blending 3D animation with real footage to showcase our work.
+
+Experience Use Cases: I began my career in mechanical design at Technica International, the company where I completed my final college project. I spent several years there in various roles, with my last position being “Director of External Digital Division.” However, I did not include this title in my CV as it lasted only six months and does not align with the European definition of a director role.
+
+One of my earliest achievements was automating a tedious process for mechanical engineers. In 2006, I noticed that engineers spent around 30percent of their time manually updating design drawings when copying a system or machine design from one project to another. This involved updating layout labels, execution drawings, designer names, and dates. To address this, I created a VBA macro in AutoCAD that reduced hours of work to just five minutes.

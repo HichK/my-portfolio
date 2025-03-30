@@ -1,3 +1,5 @@
+## File: Hicham Khawand_resume
+
 # Hicham Khawand
 
 17169 Solna, Stockholm | (+46) 73-337 48 54 | hicham.khawand@gmail.com | [LinkedIn](https://linkedin.com/in/hicham-khawand)
@@ -13,7 +15,6 @@ Senior Software Engineer with expertise in automation, electrical systems, and c
 **Core Competencies:**  
 Strategic Thinker • Effective Communicator • Cross-functional Collaboration • Leadership & Mentorship • Adaptability & Problem-Solving • Generalist by nature
 
----
 
 ## Professional Experience
 

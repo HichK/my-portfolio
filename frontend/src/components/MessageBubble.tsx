@@ -23,9 +23,9 @@ const MessageBubble = ({ message }: MessageBubbleProps) => {
     useEffect(() => {
         setIsVisible(true);
 
-        if (messageRef.current) {
-            messageRef.current.scrollIntoView({ behavior: 'smooth' });
-        }
+        // if (messageRef.current) {
+        //     messageRef.current.scrollIntoView({ behavior: 'smooth' });
+        // }
     }, []);
 
     return (

@@ -13,6 +13,7 @@ const ChatInterface = () => {
     const [inputValue, setInputValue] = useState('');
     const inputRef = useRef<HTMLInputElement>(null);
     const messagesEndRef = useRef<HTMLDivElement>(null);
+    const chatAreaEndRef = useRef<HTMLDivElement>(null);
     const [showTypingIndicator, setShowTypingIndicator] = useState(false);
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -22,23 +23,33 @@ const ChatInterface = () => {
             const message = inputValue;
             setInputValue('');
 
-            // Focus the input again after sending
-            if (inputRef.current) {
-                inputRef.current.focus();
-            }
 
             await sendMessage(message);
 
-            // Scroll to the bottom after sending the message
-            scrollToBottom();
+            // Focus the input again after sending after a delay
+            setTimeout(() => {
+                if (inputRef.current) {
+                    inputRef.current.focus();
+
+                    // Scroll to the bottom after sending the message
+                    scrollToBottom();
+                }
+            }, 50);
+
+
+
         }
     };
 
     const scrollToBottom = () => {
-        if (messagesEndRef.current) {
-            messagesEndRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        if (chatAreaEndRef.current) {
+            chatAreaEndRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
         }
     };
+
+    useEffect(() => {
+        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, [messages]);
 
     // Scroll to bottom when messages change
     useEffect(() => {
@@ -58,9 +69,7 @@ const ChatInterface = () => {
 
     // Scroll to bottom when messages change
     useEffect(() => {
-        if (messagesEndRef.current) {
-            messagesEndRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
-        }
+        scrollToBottom();
     }, [messages, showTypingIndicator]);
 
     // Handle keyboard shortcut (Cmd/Ctrl + Enter)
@@ -99,7 +108,7 @@ const ChatInterface = () => {
             </div>
 
             {/* Messages container */}
-            <div className="flex-1 overflow-y-auto p-4 sm:p-6">
+            <div className="flex-1 overflow-y-auto p-4 sm:p-6" style={{ marginBottom: '4rem' }}>
                 {messages.length === 0 ? (
                     <div className="flex flex-col items-center justify-center h-full text-center p-6">
                         <div className="w-32 h-32 mb-4 rounded-full bg-muted flex items-center justify-center animate-float">
@@ -177,6 +186,11 @@ const ChatInterface = () => {
                     Press Enter to send
                 </div>
             </form>
+            <div className="text-xs text-muted-foreground my-4 text-center">
+                You can send up to 5 messages per minute.
+                Your messages and IP address may be logged and reviewed by Hicham if needed.
+            </div>
+            <div ref={chatAreaEndRef} />
         </div>
     );
 };

@@ -1,3 +1,5 @@
+## File: skills_proficiency_table
+
 # Skills Proficiency Table
 
 This table summarizes proficiency in various skills/tools related to automation and software engineering. Ratings are based on a scale from 1 to 10.
@@ -36,8 +38,3 @@ This table summarizes proficiency in various skills/tools related to automation 
 | Effective Communicator                                                         | Soft skill                      |                            6 |                                8 |                                         nan |
 | Stakeholder Engagement                                                         | Soft skill                      |                            6 |                                9 |                                         nan |
 | Adaptability                                                                   | Soft skill                      |                            8 |                                8 |                                         nan |
-| English                                                                        | Language                        |                            9 |                                9 |                                         nan |
-| French                                                                         | Language                        |                            7 |                                9 |                                         nan |
-| Arabic                                                                         | Language                        |                            9 |                                9 |                                         nan |
-| German                                                                         | Language                        |                            2 |                                6 |                                         nan |
-| Swedish                                                                        | Language                        |                            2 |                                2 |                                         nan |

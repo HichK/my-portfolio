@@ -1,3 +1,6 @@
+## File: soft-skills
+### Chunk 1 (Approx. 481 tokens)
+
 
 # Soft Skills – Hicham Khawand
 
