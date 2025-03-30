@@ -92,7 +92,7 @@ const ChatInterface = () => {
     }, []);
 
     return (
-        <div className="flex flex-col w-full max-w-4xl mx-auto h-[calc(100dvh-14rem)] sm:h-[calc(100dvh-16rem)] md:h-[calc(100dvh-18rem)] glass rounded-xl overflow-hidden border border-border/50 opacity-85">
+        <div className="flex flex-col w-full max-w-4xl mx-auto h-[calc(100dvh-4rem)] sm:h-[calc(100dvh-12rem)] md:h-[calc(100dvh-16rem)] glass rounded-xl overflow-hidden border border-border/50 opacity-85">
             {/* Chat header */}
             <div className="p-4 border-b border-border/40 flex justify-between items-center glass-darker">
                 <h3 className="text-lg font-medium">Chat with my virtual self</h3>
