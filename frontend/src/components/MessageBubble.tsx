@@ -1,5 +1,5 @@
-
 import React, { useEffect, useRef, useState } from 'react';
+import ReactMarkdown from 'react-markdown';
 import { cn } from '@/lib/utils';
 import { Message } from '@/context/ChatContext';
 import { User, Bot } from 'lucide-react';
@@ -21,12 +21,11 @@ const MessageBubble = ({ message }: MessageBubbleProps) => {
     }).format(message.timestamp);
 
     useEffect(() => {
-        setIsVisible(true);
-
-        // if (messageRef.current) {
-        //     messageRef.current.scrollIntoView({ behavior: 'smooth' });
-        // }
-    }, []);
+        // Avoid unnecessary re-renders
+        if (!isVisible) {
+            setIsVisible(true);
+        }
+    }, [isVisible]);
 
     return (
         <div
@@ -55,7 +54,12 @@ const MessageBubble = ({ message }: MessageBubbleProps) => {
                         : 'glass rounded-tl-none'
                 )}
             >
-                <div className="text-sm md:text-base whitespace-pre-wrap">{message.content}</div>
+                {/* Render message content as Markdown */}
+                <div className="text-sm md:text-base whitespace-pre-wrap">
+                    <ReactMarkdown>
+                        {message.content}
+                    </ReactMarkdown>
+                </div>
                 <div className={cn(
                     'text-xs mt-1 text-right',
                     isUser ? 'text-primary-foreground/70' : 'text-muted-foreground'

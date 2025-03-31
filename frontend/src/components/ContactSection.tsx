@@ -16,7 +16,7 @@ const ContactSection = () => {
 
             <div className="flex flex-wrap justify-center gap-6 mb-12">
                 <a
-                    href="mailto:your.hicham.khawand@gmail.com"
+                    href="mailto:hicham.khawand@gmail.com"
                     className="animate-slide-up [animation-delay:200ms]"
                 >
                     <Button className="flex items-center space-x-2 h-14 px-6">
